@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOOD GAME - Контакты</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #000;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #00ff00;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0 0 15px #00ff00;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: #1a1a1a;
+            color: #00ff00;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid #00ff00;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .nav-btn:hover {
+            background: #00ff00;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+        }
+
+        .nav-btn.active {
+            background: #00ff00;
+            color: #000;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: transparent;
+            color: #00ff00;
+            text-decoration: none;
+            border: 2px solid #00ff00;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #00ff00;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            color: #00ff00;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contacts-section {
+            background: #111;
+            padding: 50px;
+            border-radius: 15px;
+            border: 2px solid #00ff00;
+            margin-bottom: 50px;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #00ff00;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 0, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            color: #00ff00;
+            margin-bottom: 20px;
+        }
+
+        .contact-title {
+            color: #00ff00;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00ff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid #00ff00;
+        }
+
+        .contact-link:hover {
+            background: #000;
+            color: #00ff00;
+            transform: scale(1.05);
+        }
+
+        .phone-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff00;
+            margin: 15px 0;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .email-link {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 18px;
+            word-break: break-all;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .qr-section {
+            background: #111;
+            padding: 50px;
+            border-radius: 15px;
+            border: 2px solid #00ff00;
+            margin: 50px 0;
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .qr-card {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #00ff00;
+            text-align: center;
+        }
+
+        .qr-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 3px solid #00ff00;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .qr-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .qr-title {
+            color: #00ff00;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .location-section {
+            background: #111;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #00ff00;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .address {
+            font-size: 24px;
+            color: #00ff00;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .working-hours {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #00ff00;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .hours-title {
+            color: #00ff00;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hours-list {
+            list-style: none;
+            font-size: 22px;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .hours-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            background: #000;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 3px solid #00ff00;
+            margin-top: 50px;
+            color: #00ff00;
+        }
+
+        .footer-small {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
+            }
+            
+            .nav-btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .qr-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">GOOD GAME</div>
+        
+        <div class="nav-menu">
+            <a href="Doc1.html" class="nav-btn">ГЛАВНАЯ</a>
+            <a href="uslugi.html" class="nav-btn">УСЛУГИ</a>
+            <a href="ceny.html" class="nav-btn">ЦЕНЫ</a>
+            <a href="kontakty.html" class="nav-btn active">КОНТАКТЫ</a>
+            <a href="https://t.me/goodgame_38" class="nav-btn" target="_blank">ЗАБРОНИРОВАТЬ</a>
+        </div>
+        
+        <a href="Doc1.html" class="back-btn">← Вернуться в главное меню</a>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2 class="section-title">КОНТАКТЫ</h2>
+            
+            <div class="contacts-section">
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3 class="contact-title">БРОНИРОВАНИЕ</h3>
+                        <div class="phone-number">7 904 113 63 11</div>
+                        <p class="contact-info">Звоните для бронирования мест</p>
+                        <a href="tel:79041136311" class="contact-link">Позвонить сейчас</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🛠️</div>
+                        <h3 class="contact-title">ТЕХПОДДЕРЖКА</h3>
+                        <div class="phone-number">7 924 011 84 90</div>
+                        <p class="contact-info">Основной номер поддержки</p>
+                        <a href="tel:79240118490" class="contact-link">Позвонить</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🔧</div>
+                        <h3 class="contact-title">ЗАПАСНАЯ ЛИНИЯ</h3>
+                        <div class="phone-number">7 924 350 01 77</div>
+                        <p class="contact-info">Дополнительный номер поддержки</p>
+                        <a href="tel:79243500177" class="contact-link">Позвонить</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3 class="contact-title">EMAIL</h3>
+                        <p class="contact-info">Для вопросов и предложений</p>
+                        <a href="mailto:goodgameclub@inbox.ru" class="email-link">goodgameclub@inbox.ru</a>
+                        <br>
+                        <a href="mailto:goodgameclub@inbox.ru" class="contact-link">Написать письмо</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="location-section">
+            <h2 class="section-title">НАШ АДРЕС</h2>
+            <div class="address">Верхняя Набережная, 167/11</div>
+            <a href="https://2gis.ru/irkutsk/firm/70000001101487324/104.331696%2C52.251057?m=104.332244%2C52.251153%2F19.48" 
+               class="contact-link" target="_blank" style="margin-top: 20px;">
+               📍 Открыть в 2ГИС
+            </a>
+        </div>
+
+        <div class="working-hours">
+            <h3 class="hours-title">ГРАФИК РАБОТЫ</h3>
+            <ul class="hours-list">
+                <li><strong>КРУГЛОСУТОЧНО</strong></li>
+                <li>Понедельник - Воскресенье: 24/7</li>
+            </ul>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">ПРИСОЕДИНЯЙТЕСЬ К НАМ</h2>
+            
+            <div class="qr-section">
+                <div class="qr-grid">
+                    <div class="qr-card">
+                        <div class="qr-image">
+                            <!-- QR код для Telegram - photo13.jpg -->
+                            <img src="photos/photo13.jpg" alt="QR код для Telegram">
+                        </div>
+                        <h3 class="qr-title">Telegram канал</h3>
+                        <p class="contact-info">Новости и бронирование</p>
+                        <a href="https://t.me/goodgame_38" class="contact-link" target="_blank">Перейти в Telegram</a>
+                    </div>
+                    
+                    <div class="qr-card">
+                        <div class="qr-image">
+                            <!-- QR код для ВКонтакте - photo14.jpg -->
+                            <img src="photos/photo14.jpg" alt="QR код для ВКонтакте">
+                        </div>
+                        <h3 class="qr-title">ВКонтакте</h3>
+                        <p class="contact-info">Сообщество и мероприятия</p>
+                        <a href="https://vk.ru/goodgame_38" class="contact-link" target="_blank">Перейти в VK</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="background: #111; padding: 40px; border-radius: 15px; border: 2px solid #00ff00; text-align: center; margin: 50px 0;">
+            <h2 style="color: #00ff00; font-size: 28px; margin-bottom: 20px;">БЫСТРОЕ БРОНИРОВАНИЕ</h2>
+            <p style="color: #ccc; font-size: 18px; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Выберите удобный способ связи для мгновенного бронирования места. Мы работаем круглосуточно!
+            </p>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://t.me/goodgame_38" 
+                   style="display: inline-block; padding: 15px 35px; background: #0088cc; color: white; text-decoration: none; border-radius: 10px; font-size: 18px; font-weight: bold; transition: all 0.3s ease; border: 2px solid #0088cc;">
+                   💬 Telegram бронирование
+                </a>
+                
+                <a href="tel:79041136311" 
+                   style="display: inline-block; padding: 15px 35px; background: #00ff00; color: #000; text-decoration: none; border-radius: 10px; font-size: 18px; font-weight: bold; transition: all 0.3s ease; border: 2px solid #00ff00;">
+                   📞 Позвонить для брони
+                </a>
+            </div>
+            
+            <p style="color: #888; margin-top: 25px; font-size: 16px;">
+                В нашем клубе всегда есть свободные места. Бронируйте заранее для игры большой компанией!
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 20px; margin-bottom: 10px;">GOOD GAME Computer Club</p>
+        <p style="font-size: 18px; margin-bottom: 5px;">📍 Верхняя Набережная, 167/11</p>
+        <p style="font-size: 18px; margin-bottom: 5px;">📱 7 904 113 63 11 (бронирование)</p>
+        <p style="font-size: 18px; margin-bottom: 20px;">⏰ Работаем круглосуточно</p>
+        
+        <div class="footer-small">
+            Сайт сделан по заказу Частное учреждение профессиональная образовательная организация "Русско-Азиатский экономико-правовой колледж"<br>
+            Адрес: 664007, Иркутская область, г. Иркутск, ул. Байкальская, 258 А<br>
+            Разработчик: [Никита Плиско/Артём Хантаков, КИО 24-9]<br>
+            Начало работ: 19 октября 2025 года
+        </div>
+    </div>
+</body>
+</html>

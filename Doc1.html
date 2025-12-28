@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOOD GAME - Главное меню</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 60px;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0 0 20px #00ff00;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .menu-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: #003300;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background: #00ff00;
+            color: #000;
+            box-shadow: 0 0 25px #00ff00;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #00ff00;
+        }
+
+        .footer-small {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">GOOD GAME</div>
+        <p class="subtitle">Компьютерный клуб премиум-класса</p>
+        <p class="subtitle">Иркутск</p>
+    </div>
+
+    <div class="menu">
+        <a href="index.html" class="menu-btn">ГЛАВНАЯ</a>
+        <a href="uslugi.html" class="menu-btn">УСЛУГИ</a>
+        <a href="ceny.html" class="menu-btn">ЦЕНЫ</a>
+        <a href="kontakty.html" class="menu-btn">КОНТАКТЫ</a>
+        <a href="https://t.me/goodgame_38" class="menu-btn">ЗАБРОНИРОВАТЬ</a>
+    </div>
+
+    <div class="footer">
+        <p>GOOD GAME Computer Club</p>
+        <div class="footer-small">
+            Сайт сделан по заказу Частное учреждение профессиональная образовательная организация "Русско-Азиатский экономико-правовой колледж"<br>
+            Адрес: 664007, Иркутская область, г. Иркутск, ул. Байкальская, 258 А<br>
+            Разработчик: [Никита Плиско/Артём Хантаков, КИО 24-9]<br>
+            Начало работ: 19 октября 2025 года
+        </div>
+    </div>
+</body>
+</html>
